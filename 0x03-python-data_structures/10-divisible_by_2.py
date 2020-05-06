@@ -11,4 +11,4 @@ def divisible_by_2(my_list=[]):
             bool_list = bool_list + [True]
         else:
             bool_list = bool_list + [False]
-    return bool_list 
+    return bool_list
