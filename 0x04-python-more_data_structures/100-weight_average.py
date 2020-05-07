@@ -19,5 +19,5 @@ def weight_average(my_list=[]):
         divisor += elem
 
     result = divisor / dividend
-    
+
     return result
