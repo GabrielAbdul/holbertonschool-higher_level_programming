@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def list_division(my_list_1, my_list_2, list_length):
     res = 0
     new_list = []
@@ -12,7 +13,7 @@ def list_division(my_list_1, my_list_2, list_length):
         except ZeroDivisionError:
             res = 0
             print("division by zero")
-        except TypeError:
+        except (TypeError, ValueError):
             res = 0
             print("wrong type")
         finally:
