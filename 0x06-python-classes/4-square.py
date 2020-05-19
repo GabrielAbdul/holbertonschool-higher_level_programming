@@ -9,7 +9,7 @@ class Square:
 
     """
     def __init__(self, size=0):
-    
+
         """
 
         Initialization of square size
@@ -18,14 +18,14 @@ class Square:
             size (int): input square size
 
         """
-    
+
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-            
+
     def area(self):
         """
         Method of class Square that computes are
@@ -48,7 +48,7 @@ class Square:
         Method of class Sqaure that sets size
 
         Args:
-            value: value to set size to 
+            value: value to set size to
         """
 
         if type(value) != int:
@@ -57,4 +57,3 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-
