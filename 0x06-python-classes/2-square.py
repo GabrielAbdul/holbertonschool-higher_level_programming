@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module defines a class of square that has no size
+"""
 
 
 class Square:
