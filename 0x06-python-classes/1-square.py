@@ -1,11 +1,17 @@
 #!/usr/bin/python3
+"""
+defines a square tha has no size
+"""
 
 
 class Square:
-    """ Class of square that has no size
+    """
+    Class of square that has no size
 
     Attributes:
         __size (int): size of square
 
     """
-    __size = None
+
+    def __init__(self, __size):
+        self.__size = __size
