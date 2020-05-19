@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 class Square:
     """ Class of square that has no size
 
@@ -9,7 +8,7 @@ class Square:
 
     """
     def __init__(self, size=0):
-
+    
         """
 
         Initialization of square size
@@ -18,7 +17,7 @@ class Square:
             size (int): input square size
 
         """
-
+    
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -26,6 +25,7 @@ class Square:
         else:
             self.__size = size
 
+            
     def area(self):
         """
         Method of class Square that computes are
@@ -48,7 +48,7 @@ class Square:
         Method of class Sqaure that sets size
 
         Args:
-            value: value to set size to
+            value: value to set size to 
         """
 
         if type(value) != int:
@@ -58,15 +58,61 @@ class Square:
         else:
             self.__size = value
 
-    def my_print(self):
+    def __lt__(self, other):
         """
-        Method of class Square that prints the square with the # char
+        Method of class Square that enables < comparison
         """
+        return self.size < other.size
 
-        if self.__size == 0:
-            print()
-        else:
-            for rows in range(self.__size):
-                for cols in range(self.__size):
-                    print('#', end='')
-                print()
+    def __le__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return self.size <= other.size
+
+    def __eq__(self, other):
+        """
+        Method  of class Square that enables < comparison
+        """
+        return self.size == other.size
+
+    def __ne__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return not self.size == other.size
+
+    def __gt__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return self.size > other.size
+
+    def __ge__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return self.size >= other.size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
