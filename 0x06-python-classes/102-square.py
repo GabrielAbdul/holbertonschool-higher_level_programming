@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-@total_ordering
 class Square:
     """ Class of square that has no size
 
@@ -26,7 +25,6 @@ class Square:
         else:
             self.__size = size
 
-        
             
     def area(self):
         """
@@ -59,4 +57,62 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
+    def __lt__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return self.size < other.size
+
+    def __le__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return self.size <= other.size
+
+    def __eq__(self, other):
+        """
+        Method  of class Square that enables < comparison
+        """
+        return self.size == other.size
+
+    def __ne__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return not self.size == other.size
+
+    def __gt__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return self.size > other.size
+
+    def __ge__(self, other):
+        """
+        Method of class Square that enables < comparison
+        """
+        return self.size >= other.size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
