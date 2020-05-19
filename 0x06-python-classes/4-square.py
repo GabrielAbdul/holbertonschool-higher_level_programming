@@ -1,4 +1,17 @@
 #!/usr/bin/python3
+"""
+This module defines a class Square based on 3-square.py
+
+    Attributes:
+        private instance attribute size
+
+        property size() to retrieve size
+
+        property setter size() to set it
+
+        public instance method area()
+
+"""
 
 
 class Square:
