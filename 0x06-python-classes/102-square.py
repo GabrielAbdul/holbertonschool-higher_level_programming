@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+class Square defines a square based on 4-square.py
+"""
 
 class Square:
     """ Class of square that has no size
