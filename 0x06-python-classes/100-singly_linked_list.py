@@ -18,8 +18,7 @@ class Node:
             data: data
             next_node: the next node, set to None initially
         """
-        __data = data(self, data)
-        __next_node = None
+        __data = data
 
     
     @property
@@ -59,12 +58,12 @@ class Node:
         """
 
         if isinstance(value, Node) or value == None:
-            self.__next_node = value
+            self.next_node = value
         else:
             raise TypeError("next_node must be a Node object")
             
     
-class SinglyLinkedList
+class SinglyLinkedList:
     """
     Class SinglyLinkedList that defines a singly linked list
     """
@@ -74,8 +73,8 @@ class SinglyLinkedList
         """
         Init method of class SLL
         """
-        self.__head = __head
-        self.__head.__next_node = None
+        self.__head = None
+        self.__head.next_node = None
 
     def sorted_insert(self, value):
         """
@@ -83,15 +82,19 @@ class SinglyLinkedList
         into the correct sorted position (increasing order)
         """
 
-        Node *node = None
-        flag, index = 0, 0
+        node = Node(value)
 
-        node.__data = value
+        if (self.head is None):
+            self.head = node
 
-        if (!self.__head or self.__head):
-            self.__head = node
-        for(; node; node = node.__next_node):
-            if node.__data < node.__next_node.__data:
-                node
+        tmp  = self.head
 
-        
+        while tmp.next_node:
+            if tmp.__data < value:
+                node = tmp.__data
+            elif tmp.__data > value:
+                tmp = tmp.next_node
+            else:
+                tmp.next_node = node
+                node.next_node = tmp.next_node.next_node
+            
