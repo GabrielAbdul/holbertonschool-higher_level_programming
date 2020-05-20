@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+class Square that defines a square based on 5-square.py
+"""
 
 class Square:
     """ Class of square that has no size
@@ -95,13 +97,11 @@ class Square:
         if self.__size == 0:
             print()
         else:
+            for newlines in range(self.__position[1]):
+                print()
             for rows in range(self.__size):
-                if self.__position[0] > 0:
-                    for space in range(self.__position[0]):
-                        print(' ')
-                    for cols in range(self.__size):
-                        if self.__position[1] > 0:
-                            for nl in range(self.__position[1]):
-                                print()
+                for space in range(self.__position[0]):
+                    print(' ', end="")
+                for cols in range(self.__size):
                     print('#', end='')
                 print()
