@@ -1,100 +1,81 @@
 #!/usr/bin/python3
+""" Singly linked list mod """
 
 
 class Node:
-    """
-    Class Node defines a node of a singly linked list
-
-    Attributes:
-        data: data int
-        next_ndoe: the next node
-    """
-
+    """ singly linked list """
     def __init__(self, data, next_node=None):
-        """
-        Init method of class Node
-
+        """ private att
         Args:
-            data: data
-            next_node: the next node, set to None initially
+             data - info in list
         """
-        __data = data
+        self.data = data
+        self.next_node = next_node
 
-    
     @property
     def data(self):
-        """
-        Method data of class Node to retrive data
-        """
+        """ data """
         return self.__data
 
-    @property
-    def __next_node(self):
-        """
-        Metod next_node of class Node to retrive next_node
-        """
-        return self.__next_node
-        
     @data.setter
     def data(self, value):
-        """
-        Method data(self, value) of class Node to set data
-
-        Args:
-            value: value to set to data
-        """
-        if type(value) != int:
+        """ set value in a node in a linked list """
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        else:
-            self.__data = value
+        self.__data = value
+
+    @property
+    def next_node(self):
+        """ get next node """
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        """
-        Method of class Node to set the next node
-
-        Args:
-            value: next node
-        """
-
-        if isinstance(value, Node) or value == None:
-            self.next_node = value
-        else:
+        """ sets the next node """
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
-            
-    
-class SinglyLinkedList:
-    """
-    Class SinglyLinkedList that defines a singly linked list
-    """
+        self.__next_node = value
 
-    
+""" Does More Docstring go here, I really don't know """
+
+
+class SinglyLinkedList:
+    """ linked list """
     def __init__(self):
-        """
-        Init method of class SLL
-        """
+        """ head """
         self.__head = None
-        self.__head.next_node = None
 
     def sorted_insert(self, value):
-        """
-        Method sorted_insert of class SLL that inserts a new node
-        into the correct sorted position (increasing order)
-        """
-
-        node = Node(value)
-
-        if (self.head is None):
-            self.head = node
-
-        tmp  = self.head
-
-        while tmp.next_node:
-            if tmp.__data < value:
-                node = tmp.__data
-            elif tmp.__data > value:
+        """ node """
+        Newn = Node(value, None)
+        if (self.__head is None):
+            self.__head = Newn
+            return
+        tmp = self.__head
+        if tmp.data > Newn.data:
+            Newn.next_node = tmp
+            self.__head = Newn
+            return
+        while tmp.next_node is not None:
+            tmp2 = tmp.next_node
+            if tmp2.data < Newn.data:
                 tmp = tmp.next_node
+                continue
             else:
-                tmp.next_node = node
-                node.next_node = tmp.next_node.next_node
-            
+                tmp.next_node = Newn
+                Newn.next_node = tmp2
+                return
+        if tmp.next_node is None:
+            tmp.next_node = Newn
+            return
+
+    def __str__(self):
+        """ str to print """
+        new = ""
+        nh = self.__head
+        while nh is not None:
+            new += (str(nh.data))
+            nh = nh.next_node
+            if nh is not None:
+                new += ('\n')
+        return new
