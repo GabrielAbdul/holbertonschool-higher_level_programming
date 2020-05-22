@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+>>> say_my_name("Walter", "White")
+My name is Walter White
+>>> say_my_name("Bob")
+My name is Bob 
+>>> say_my_name(NoString, "String")
+Traceback (most recent call last):
+	...
+NameError: name 'NoString' is not defined
+>>> say_my_name("StringToBeFirstName", "StringToBeLastName")
+My name is StringToBeFirstName StringToBeLastName
+>>> say_my_name("False", "True")
+My name is False True
+>>> say_my_name("False", True)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+>>> say_my_name(1, "boy")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+>>> say_my_name(2, "ello")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
