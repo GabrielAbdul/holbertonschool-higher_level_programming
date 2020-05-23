@@ -13,4 +13,4 @@ def text_indentation(text):
             text[i + 1] = '\n\n'
     for i in range(len(text)):
         buf += text[i]
-    print(buf)
+    print(buf, end='')
