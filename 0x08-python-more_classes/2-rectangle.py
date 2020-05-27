@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""
-Class Rectangle that defines a rectangle based on 1-rectangle.py
 
+
+"""Class Rectangle that defines a rectangle based on 1-rectangle.py
 Attributes:
     __width
     __height
@@ -89,10 +89,11 @@ class Rectangle:
         method of class rectangle to return area
         """
         return self.__height * self.__width
+
     def perimeter(self):
         """
         method of class rectangle to return perimeter
         """
         if self.__height is 0 or self.__width is 0:
             return 0
-        return ((self.__height * 2 ) + (self.__width * 2))
+        return ((self.__height * 2) + (self.__width * 2))
