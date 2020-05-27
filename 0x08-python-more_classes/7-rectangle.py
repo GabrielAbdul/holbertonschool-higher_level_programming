@@ -23,7 +23,7 @@ class Rectangle:
     """
     number_of_instances = 0
     print_symbol = '#'
-    
+
     def __init__(self, width=0, height=0):
         """
         init method of class rectangle to initialize new instances with values
@@ -95,14 +95,14 @@ class Rectangle:
         method of class rectangle to return area
         """
         return self.__height * self.__width
+
     def perimeter(self):
         """
         method of class rectangle to return perimeter
         """
         if self.__height is 0 or self.__width is 0:
             return 0
-        return ((self.__height * 2 ) + (self.__width * 2))
-
+        return ((self.__height * 2) + (self.__width * 2))
 
     def __str__(self):
         """
@@ -118,14 +118,16 @@ class Rectangle:
                 str_rep += '\n'
             print(str_rep)
             return str_rep
+
     def __repr__(self):
         """
         method of class rectangle to return a string representation of rect
         """
         return "Rectangle(%r, %r)" % (self.width, self.height)
+
     def __del__(self):
         """
         method of class rectangle to delete an instance and print a message
         """
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1        
+        Rectangle.number_of_instances -= 1
