@@ -9,6 +9,7 @@ Attributes:
     width(self, value) setter
     height(self) getter
     height(self, value) setter
+    made exe
 """
 
 
