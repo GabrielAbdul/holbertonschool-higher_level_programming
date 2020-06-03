@@ -15,5 +15,5 @@ def read_lines(filename="", nb_lines=0):
         for lines in file:
             print(lines, end='')
             line_num += 1
-            if line_num > nb_lines:
+            if line_num == nb_lines:
                 break
