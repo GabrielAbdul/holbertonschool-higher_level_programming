@@ -12,9 +12,8 @@ def read_lines(filename="", nb_lines=0):
     with open(filename, encoding='UTF-8') as file:
         if nb_lines <= 0:
             print(file.read(), end='')
-            return 0
         for lines in file:
             print(lines, end='')
             line_num += 1
             if line_num > nb_lines:
-                return line_num
+                break
