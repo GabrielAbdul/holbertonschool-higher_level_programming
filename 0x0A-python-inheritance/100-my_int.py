@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Class MyInt that inherits from int"""
 
+
 class MyInt(int):
     """class MyInt"""
     def __eq__(self, other):
