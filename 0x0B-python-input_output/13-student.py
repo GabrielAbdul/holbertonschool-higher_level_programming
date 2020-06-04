@@ -28,6 +28,7 @@ class Student:
             if key in self.__dict__:
                 list_attrs[key] = self.__dict__[key]
         return list_attrs
+
     def reload_from_json(self, json):
         """reload_from_json
             loops through all keys in json dictionary,
