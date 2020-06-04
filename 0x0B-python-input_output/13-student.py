@@ -34,5 +34,8 @@ class Student:
             and replaces all attributes in self class
             with attributes found in dict
         """
-        for attr in json.keys():
-            setattr(self, attr, json[attr])
+        copy = self.__dict__
+        for attrs in json.keys():
+            for attr in copy:
+                if attr == attrs:
+                    setattr(self, attrs, json[attrs])
