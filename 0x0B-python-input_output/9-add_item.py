@@ -17,5 +17,4 @@ except Exception:
 
 arg_list.append(argv[1:])
 
-save_to_json_file(my_list, 'add_item.json')
-        
+save_to_json_file(arg_list, 'add_item.json')
