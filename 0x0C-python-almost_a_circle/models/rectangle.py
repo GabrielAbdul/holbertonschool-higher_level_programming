@@ -40,10 +40,10 @@ class Rectangle(Base):
                     x - x
                     y - y
             """
-            self.__width = width
-            self.__height = height
-            self.__x = x
-            self.__y = y
+            self.width = width
+            self.height = height
+            self.x = x
+            self.y = y
             super().__init__(id)
 
     @property
@@ -52,12 +52,12 @@ class Rectangle(Base):
         return self.width
 
     @width.setter
-    def width_setter(self, width):
+    def width(self, width):
         """Width setter"""
         if type(width) is not int:
-            raise TypeError("width must be an int")
-        elif width <= 0:
-            raise ValueError("width must be greater than  0")
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
         else:
             self.__width = width
 
@@ -67,12 +67,12 @@ class Rectangle(Base):
         return self.height
 
     @height.setter
-    def height_setter(self, height):
+    def height(self, height):
         """Height setter"""
         if type(height) is not int:
-            raise TypeError("height must be an int")
-        elif height <= 0:
-            raise ValueError("height must be greater than 0")
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be >= 0")
         else:
             self.__height = height
 
@@ -82,8 +82,14 @@ class Rectangle(Base):
         return self.x
 
     @x.setter
-    def x_setter(self):
-        self.__x = x
+    def x(self, x):
+        """x setter"""
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        elif x < 0:
+            raise ValueError("x must be >= 0")
+        else:
+            self.__x = x
 
     @property
     def y(self):
@@ -91,5 +97,11 @@ class Rectangle(Base):
         return self.y
 
     @y.setter
-    def y_setter(self):
-        self.__y = y
+    def y(self, y):
+        """y setter"""
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        elif y < 0:
+            raise ValueError("y must be >= 0")
+        else:
+            self.__y = y
