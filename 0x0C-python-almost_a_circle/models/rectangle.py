@@ -112,10 +112,17 @@ class Rectangle(Base):
 
     def display(self):
         """prints in stdout the rectangle instance with '#'"""
-        for i in range(self.__height):
-            for x in range(self.__width):
-                print('#', end='')
+        if self.__height and self.__width == 0:
             print()
+        else:
+            for newlines in range(self.__y):
+                print()
+            for rows in range(self.__height):
+                for space in range(self.__x):
+                    print(' ', end='')
+                for cols in range(self.__width):
+                    print('#', end='')
+                print()
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
