@@ -2,6 +2,26 @@
 """2. First Rectangle """
 
 
+class Base:
+    """Class Base
+        Attributes:
+            __nb_objects = # of instances meant to be id
+    """
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """init method
+            Args:
+                id - obj id
+        """
+        self.__nb_objects
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+        else:
+            self.id = id
+
+
 class Rectangle(Base):
     """Class Rectangle that ingerits from Base
         Attributes:
@@ -12,7 +32,7 @@ class Rectangle(Base):
         Methods:
             __init__() - Class constructor
     """
-        def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, width, height, x=0, y=0, id=None):
             """Class constructor
                 Args:
                     width - width
@@ -20,10 +40,10 @@ class Rectangle(Base):
                     x - x
                     y - y
             """
-            self.width = width
-            self.height = height
-            self.x = x
-            self.y = y
+            self.__width = width
+            self.__height = height
+            self.__x = x
+            self.__y = y
             super().__init__(id)
 
     @property
@@ -31,12 +51,13 @@ class Rectangle(Base):
         """Width getter"""
         return self.width
 
-
     @width.setter
     def width_setter(self, width):
         """Width setter"""
         if type(width) is not int:
             raise TypeError("width must be an int")
+        elif width <= 0:
+            raise ValueError("width must be greater than  0")
         else:
             self.__width = width
 
@@ -45,14 +66,30 @@ class Rectangle(Base):
         """Height getter"""
         return self.height
 
-   @height.setter
+    @height.setter
     def height_setter(self, height):
-        """Width setter"""
+        """Height setter"""
         if type(height) is not int:
-            raise TypeError("width must be an int")
-	elif height <= 0:
-            raise
+            raise TypeError("height must be an int")
+        elif height <= 0:
+            raise ValueError("height must be greater than 0")
         else:
-            self.__width = width
+            self.__height = height
 
+    @property
+    def x(self):
+        """x property"""
+        return self.x
 
+    @x.setter
+    def x_setter(self):
+        self.__x = x
+
+    @property
+    def y(self):
+        """y property"""
+        return self.y
+
+    @y.setter
+    def y_setter(self):
+        self.__y = y
