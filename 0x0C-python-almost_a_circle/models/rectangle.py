@@ -49,7 +49,7 @@ class Rectangle(Base):
     @property
     def width(self):
         """Width getter"""
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, width):
@@ -64,7 +64,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """Height getter"""
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, height):
@@ -79,7 +79,7 @@ class Rectangle(Base):
     @property
     def x(self):
         """x property"""
-        return self.x
+        return self.__x
 
     @x.setter
     def x(self, x):
@@ -94,7 +94,7 @@ class Rectangle(Base):
     @property
     def y(self):
         """y property"""
-        return self.y
+        return self.__y
 
     @y.setter
     def y(self, y):
@@ -116,3 +116,7 @@ class Rectangle(Base):
             for x in range(self.__width):
                 print('#', end='')
             print()
+
+    def __str__(self):
+        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
