@@ -1,8 +1,25 @@
 #!/usr/bin/python3
-"""Class Rectangle"""
+"""2. First Rectangle """
 
 
-from models.base import Base
+class Base:
+    """Class Base
+        Attributes:
+            __nb_objects = # of instances meant to be id
+    """
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """init method
+            Args:
+                id - obj id
+        """
+        self.__nb_objects
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+        else:
+            self.id = id
 
 
 class Rectangle(Base):
@@ -107,45 +124,15 @@ class Rectangle(Base):
                     print('#', end='')
                 print()
 
-    def update(self, *args, **kwargs):
+    def update(self, *args):
         """assigns an argument to each attribute"""
-        if args:
-            try:
-                self.id = args[0]
-            except Exception:
-                pass
-            try:
-                self.width = args[1]
-            except Exception:
-                pass
-            try:
-                self.height = args[2]
-            except Exception:
-                pass
-            try:
-                self.x = args[3]
-            except Exception:
-                pass
-            try:
-                self.y = args[4]
-            except Exception:
-                pass
-        else:
-            for keys in kwargs.keys():
-                setattr(self, keys, kwargs[keys])
-
-    def to_dictionary(self):
-        """Returns the dictionary representation of a Rectangle"""
-        self_dict = {
-            'id': self.id,
-            'width': self.width,
-            'height': self.height,
-            'x': self.x,
-            'y': self.y
-        }
-        return self_dict
-
+        self.__id = args[0]
+        self.__width = args[1]
+        self.__height = args[2]
+        self.__x = args[3]
+        self.__y = args[4]
+    
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        return "[Rectangle] ({}) {}/{} - {}/{}\
-".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+
