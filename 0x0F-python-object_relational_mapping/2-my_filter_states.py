@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     # execute our sql command
     cur.execute("{}".format("SELECT * FROM states s WHERE s.name='{}'\
-                ORDER BY s.id ASC;".format(name_state)))
+                            ;".format(name_state)))
 
     # feth our data
     data = cur.fetchall()
