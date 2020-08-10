@@ -19,8 +19,7 @@ if __name__ == '__main__':
     # create session
     session = Session()
 
-    state = session.query(State).filter(State.id == 2)
+    state = session.query(State).filter(State.id == 2).one()
 
-    for states in state:
-        states.name = 'New Mexixo'
+    state.name = 'New Mexixo'
     session.commit()
