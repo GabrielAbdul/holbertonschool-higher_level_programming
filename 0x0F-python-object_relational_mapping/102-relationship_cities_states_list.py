@@ -20,9 +20,9 @@ if __name__ == '__main__':
     # create session
     session = Session()
 
-    # query our results
+    # query our ress
     result = session.query(City).all()
 
-    # print our result, formatted correctly
-    for results in result:
-        print("{}: {} -> {}".format(results.id, results.name, results.state.name))
+    # print our res, formatted correctly
+    for res in result:
+        print("{}: {} -> {}".format(res.id, res.name, res.state.name))
