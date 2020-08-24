@@ -9,7 +9,11 @@ if __name__ == '__main__':
     from sys import argv
 
     url = 'http://0.0.0.0:5000/search_user'
-    letter = argv[1]
+    try:
+        letter = argv[1]
+    except IndexError:
+        print("No result")
+        quit()
     re = requests.post(url, data={'q': letter})
     try:
         json_obj = re.json()
