@@ -11,6 +11,9 @@ if __name__ == '__main__':
     url = 'http://0.0.0.0:5000/search_user'
     try:
         letter = argv[1]
+        if type(letter) is not int:
+            print('No result')
+            exit()
         re = requests.post(url, data={'q': letter})
         if re.json() is not {}:
             print("[{}] {}".format(re.json()['id'], re.json()['name']))
