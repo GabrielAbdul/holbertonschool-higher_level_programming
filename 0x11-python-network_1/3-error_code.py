@@ -13,9 +13,9 @@ if __name__ == '__main__':
         url = sys.argv[1]
         with urllib.request.urlopen(url) as response:
             html = response.read().decode('utf8')
-            print(html)
+            print(html.text)
     except urllib.error.HTTPError as e:
         # e = HTTP Error 401: UNAUTHORIZED
         e = str(e)
-        e = e.rsplit(' ')[2].replace(':', ' ')
+        e = e.rsplit(' ')[2].replace(':', '')
         print('Error code: {}'.format(e))
