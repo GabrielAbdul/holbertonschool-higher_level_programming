@@ -14,10 +14,13 @@ if __name__ == '__main__':
         if type(letter) is not int:
             print('No result')
             exit()
-        re = requests.post(url, data={'q': letter})
-        if re.json() is not {}:
-            print("[{}] {}".format(re.json()['id'], re.json()['name']))
+        response = requests.post(url, data={'q': letter})
+        json_obj = response.json()
+        if not json_obj:
+            print('Not a valid JSON')
+        if json_obj is not {}:
+            print("[{}] {}".format(response.json()['id'], response.json()['name']))
     except IndexError:
-        re = requests.post(url, data={'q': ''})
-        if re.json() == {}:
+        response = requests.post(url, data={'q': ''})
+        if response.json() == {}:
             print('No result')
