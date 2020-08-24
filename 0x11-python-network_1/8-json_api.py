@@ -9,18 +9,13 @@ if __name__ == '__main__':
     from sys import argv
 
     url = 'http://0.0.0.0:5000/search_user'
+    letter = argv[1]
+    re = requests.post(url, data={'q': letter})
     try:
-        letter = argv[1]
-        if type(letter) is not int:
-            print('No result')
-            exit()
-        re = requests.post(url, data={'q': letter})
         json_obj = re.json()
-        if not json_obj:
-            print('Not a valid JSON')
         if json_obj is not {}:
             print("[{}] {}".format(re.json()['id'], re.json()['name']))
-    except IndexError:
-        re = requests.post(url, data={'q': ''})
-        if re.json() == {}:
-            print('No result')
+        else:
+            print("No Result")
+    except Exception:
+        print("Not a valid JSON")
