@@ -12,4 +12,4 @@ if __name__ == '__main__':
     try:
         for i in range(0, 10):
             print('{}: {}'.format(re.json()[i]['sha'],
-                                  re.json()[i]['commit']['author'].get('name'))
+                                  re.json()[i]['commit']['author'].get('name')))
