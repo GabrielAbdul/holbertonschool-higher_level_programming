@@ -11,6 +11,6 @@ if __name__ == '__main__':
     try:
         response = requests.get(argv[1])
         if response.status_code >= 400:
-            print('Error code: {}'.format(response.status_code))
+            print('Error code: {:d}'.format(response.status_code))
     except:
         print(response.text)
