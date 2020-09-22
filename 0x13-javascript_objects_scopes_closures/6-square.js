@@ -8,7 +8,7 @@ module.exports = class Square extends Rectangle {
 
   charPrint (c) {
     if (!c) {
-      return super.print();
+      return super.print('X');
     } else {
       return super.print('C');
     }
